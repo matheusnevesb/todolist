@@ -1,0 +1,119 @@
+*{
+    padding: 0;
+    margin: 0;
+    color: white;
+}
+body {
+    background-color: #0D3051;
+    display: flex;
+}
+
+section.listas {
+    background-color: #2F4C78;
+    margin: 20px;
+    width: 400px;
+    border-radius: 20px;
+    position: relative;
+} 
+
+.listaCabecalho {
+    display: flex;
+    margin: 10px;
+}
+.listaTitulo {
+    padding: 10px 0 0 40px;
+}
+
+.listaCabecalho button {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    background-color: #2F4C78;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.listas ul {
+    width: 100%;
+    background-color: #365F9B;
+}
+
+.listas ul li {
+    display: flex;
+    border: 2px solid #2F4C78;
+    padding: 10px;
+}
+
+.listas ul li div {
+    height: 16px;
+    width: 16px;
+    background-color: white;
+    border-radius: 50%;
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+.listas ul li div:active {
+    background-color: green;
+}
+
+.listas ul li label {
+    margin-left: 8px;
+}
+
+.listas ul li button {
+    background-color: red;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    border: 2px solid red;
+    position: absolute;
+    right: 27px;
+    opacity: 0;
+    transition: opacity 500ms ease;
+    cursor: pointer;
+}
+
+.listas ul li:hover button {
+    opacity: 1;
+}
+
+.containerInput {
+    padding: 10px;
+    margin-left: 40px;
+}
+
+.containerInput input {
+    background-color: #2F4C78;
+    border: none;
+    outline: none;
+}
+
+.containerInput input::placeholder {
+    color: white;
+}
+
+.containerInput button {
+    background-color: white;
+    color: #2F4C78;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+    position: absolute;
+    right: 10px;
+    bottom: 7px;
+    cursor: pointer;
+}
+
+.mais {
+    width: 55px;
+    height: 55px;
+    background-color: #2F4C78;
+    margin-top: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
