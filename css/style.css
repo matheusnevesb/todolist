@@ -117,3 +117,7 @@ section.listas {
     justify-content: center;
     cursor: pointer;
 }
+
+.sumir {
+    display: none;
+}

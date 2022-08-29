@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,37 +9,40 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <section class="listas">
-        <div class="listaCabecalho">
-            <h1 class="listaTitulo">Lista 01</h1>
-            <button> V</button>
-        </div>
-        <ul>
-            <li>
-                <div></div>
-                <label>Tarefa 01</label>
-                <button>X</button>
-            </li>
-            <li>
-                <div></div>
-                <label>Tarefa 01</label>
-                <button>X</button>
-            </li>
-            <li>
-                <div></div>
-                <label>Tarefa 01</label>
-                <button>X</button>
-            </li>
-        </ul>
-        <div class="containerInput">
-            <input type="text" placeholder="Digite sua tarefa aqui...">
-            <button>Salvar</button>
-        </div>
-
-    </section>
+    <div id="listas">
+        <section class="listas">
+            <div class="listaCabecalho">
+                <h1 class="listaTitulo">Lista 01</h1>
+                <button id="minimizar">V</button>
+            </div>
+            <ul id="tarefas">
+                <li>
+                    <div></div>
+                    <label>Tarefa 01</label>
+                    <button>X</button>
+                </li>
+                <li>
+                    <div></div>
+                    <label>Tarefa 01</label>
+                    <button>X</button>
+                </li>
+                <li>
+                    <div></div>
+                    <label>Tarefa 01</label>
+                    <button>X</button>
+                </li>
+            </ul>
+            <div class="containerInput" id="containerInput">
+                <input type="text" placeholder="Digite sua tarefa aqui...">
+                <button>Salvar</button>
+            </div>
+    
+        </section>
+    </div>
+    
 
     <section>
-        <div class="mais">
+        <div class="mais" id="mais">
             <p>+</p>
         </div>
     </section>
