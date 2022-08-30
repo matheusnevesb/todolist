@@ -11,6 +11,7 @@ const Main = {
         this.botaoMinimizar = document.querySelectorAll('#minimizar')
         this.Tarefas = document.querySelectorAll('#tarefas')
         this.ContainerInput = document.querySelectorAll('#containerInput')
+        this.botaoSalvar = document.querySelectorAll('#botaoSalvar')
     },
     bindEvents: function() {
         const self = this
@@ -20,6 +21,10 @@ const Main = {
         this.botaoMinimizar.forEach(function(botao) {
             botao.onclick = self.Events.minimizarLista.bind(this)
         });
+
+        this.botaoSalvar.forEach(function (salvar) {
+            salvar.onclick = self.Events.adicionarTarefa.bind(this)
+        })
     },
     Events: {
         adicionarLista: function() {
@@ -50,7 +55,7 @@ const Main = {
             </ul>
             <div class="containerInput" id="containerInput">
                 <input type="text" placeholder="Digite sua tarefa aqui...">
-                <button>Salvar</button>
+                <button id="botaoSalvar">Salvar</button>
             </div>
     
         </section>`
@@ -60,7 +65,6 @@ const Main = {
         
         },
         minimizarLista: function(e) {
-            console.log(e)
             listaDeTarefas = e.target.parentElement.offsetParent.children.tarefas
             containerInput = e.target.parentElement.offsetParent.children.containerInput
 
@@ -79,6 +83,20 @@ const Main = {
             listaDeTarefas.classList.add('sumir')
             containerInput.classList.add('sumir')
             
+        },
+        adicionarTarefa: function(e) {
+            let Input = e.target.parentElement.children[0].value
+
+            let li = e.target.parentElement.offsetParent.children.tarefas
+            
+            li.innerHTML += `
+            <li>
+                <div></div>
+                <label>${Input}</label>
+                <button>X</button>
+            </li>`
+
+            e.target.parentElement.children[0].value = ''
         }
     }
 }
