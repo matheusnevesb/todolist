@@ -12,6 +12,9 @@ const Main = {
         this.Tarefas = document.querySelectorAll('#tarefas')
         this.ContainerInput = document.querySelectorAll('#containerInput')
         this.botaoSalvar = document.querySelectorAll('#botaoSalvar')
+        this.$listaTitulo = document.querySelectorAll('#listaTitulo')
+        this.$inputListaTitulo = document.querySelectorAll('#inputListaTitulo')
+        this.$botaoSalvarCabecalho = document.querySelectorAll('#botaoSalvarCabecalho')
     },
     bindEvents: function() {
         const self = this
@@ -25,6 +28,14 @@ const Main = {
         this.botaoSalvar.forEach(function (salvar) {
             salvar.onclick = self.Events.adicionarTarefa.bind(this)
         })
+
+        this.$listaTitulo.forEach(function(titulo) {
+            titulo.onclick = self.Events.trocarNomeLista.bind(this)
+        })
+
+        this.$botaoSalvarCabecalho.forEach( function(botao) {
+            botao.onclick = self.Events.salvarInputLista.bind(this)
+        })
     },
     Events: {
         adicionarLista: function() {
@@ -33,7 +44,9 @@ const Main = {
             this.listas.innerHTML += `
         <section class="listas">
             <div class="listaCabecalho">
-                <h1 class="listaTitulo">Lista Nova</h1>
+                <h1 class="listaTitulo" id="listaTitulo">Lista 01</h1>
+                <input type="text" id="inputListaTitulo" class="sumir" placeholder="Digite nome da lista">
+                <button class="botaoSalvarCabecalho sumir" id="botaoSalvarCabecalho">salvar</button>
                 <button id="minimizar">V</button>
             </div>
             <ul id="tarefas">
@@ -97,6 +110,28 @@ const Main = {
             </li>`
 
             e.target.parentElement.children[0].value = ''
+        },
+        trocarNomeLista: function(e) {
+            input = e.target.nextElementSibling
+            botaoSalvar = e.target.parentElement.children[2]
+
+            input.classList.remove('sumir')
+            titulo = e.target
+            titulo.classList.add('sumir')
+            texto = titulo.innerHTML
+            input.value = texto
+            botaoSalvar.classList.remove('sumir')
+        },
+        salvarInputLista: function(e) {
+            input = e.target.parentElement.children[1]
+            texto = input.value
+
+            titulo = e.target.parentElement.children[0]
+            titulo.innerHTML = texto
+
+            input.classList.add('sumir')
+            titulo.classList.remove('sumir')
+            botaoSalvar.classList.add('sumir')
         }
     }
 }

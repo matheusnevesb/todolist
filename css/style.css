@@ -84,17 +84,26 @@ section.listas {
     margin-left: 40px;
 }
 
-.containerInput input {
+.containerInput input, .listaCabecalho input {
     background-color: #2F4C78;
     border: none;
     outline: none;
+}
+
+.listaCabecalho input {
+    font-size: 24px;
+    padding: 10px 0 0 25px;
+}
+
+.botaoSalvarCabecalho {
+    padding: 0 20px 0 0;
 }
 
 .containerInput input::placeholder {
     color: white;
 }
 
-.containerInput button {
+.containerInput button{
     background-color: white;
     color: #2F4C78;
     border: none;
