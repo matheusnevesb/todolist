@@ -15,6 +15,7 @@ const Main = {
         this.$listaTitulo = document.querySelectorAll('#listaTitulo')
         this.$inputListaTitulo = document.querySelectorAll('#inputListaTitulo')
         this.$botaoSalvarCabecalho = document.querySelectorAll('#botaoSalvarCabecalho')
+        this.$botaoApagarLista = document.querySelectorAll('#botaoApagarLista')
     },
     bindEvents: function() {
         const self = this
@@ -36,6 +37,10 @@ const Main = {
         this.$botaoSalvarCabecalho.forEach( function(botao) {
             botao.onclick = self.Events.salvarInputLista.bind(this)
         })
+
+        this.$botaoApagarLista.forEach( function(botao) {
+            botao.onclick = self.Events.apagarLista.bind(this)
+        })
     },
     Events: {
         adicionarLista: function() {
@@ -53,17 +58,17 @@ const Main = {
                 <li>
                     <div></div>
                     <label>Tarefa 01</label>
-                    <button>X</button>
+                    <button id="botaoApagarLista">X</button>
                 </li>
                 <li>
                     <div></div>
                     <label>Tarefa 01</label>
-                    <button>X</button>
+                    <button id="botaoApagarLista">X</button>
                 </li>
                 <li>
                     <div></div>
                     <label>Tarefa 01</label>
-                    <button>X</button>
+                    <button id="botaoApagarLista">X</button>
                 </li>
             </ul>
             <div class="containerInput" id="containerInput">
@@ -106,10 +111,12 @@ const Main = {
             <li>
                 <div></div>
                 <label>${Input}</label>
-                <button>X</button>
+                <button id="botaoApagarLista">X</button>
             </li>`
 
             e.target.parentElement.children[0].value = ''
+
+        Main.init()
         },
         trocarNomeLista: function(e) {
             input = e.target.nextElementSibling
@@ -132,6 +139,13 @@ const Main = {
             input.classList.add('sumir')
             titulo.classList.remove('sumir')
             botaoSalvar.classList.add('sumir')
+        },
+        apagarLista: function(e) {
+            console.log(e)
+            li = e.target.parentElement
+            li.classList.add('sumir')
+
+        Main.init()
         }
     }
 }

@@ -128,5 +128,6 @@ section.listas {
 }
 
 .sumir {
-    display: none;
+    display: none !important;
 }
+
