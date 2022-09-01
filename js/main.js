@@ -16,6 +16,7 @@ const Main = {
         this.$inputListaTitulo = document.querySelectorAll('#inputListaTitulo')
         this.$botaoSalvarCabecalho = document.querySelectorAll('#botaoSalvarCabecalho')
         this.$botaoApagarLista = document.querySelectorAll('#botaoApagarLista')
+        this.$botaoConcluido = document.querySelectorAll('#botaoConcluido')
     },
     bindEvents: function() {
         const self = this
@@ -41,6 +42,10 @@ const Main = {
         this.$botaoApagarLista.forEach( function(botao) {
             botao.onclick = self.Events.apagarLista.bind(this)
         })
+
+        this.$botaoConcluido.forEach(function(botao) {
+            botao.onclick = self.Events.concluirTarefa.bind(this)
+        })
     },
     Events: {
         adicionarLista: function() {
@@ -56,17 +61,17 @@ const Main = {
             </div>
             <ul id="tarefas">
                 <li>
-                    <div></div>
+                    <div id="botaoConcluido"></div>
                     <label>Tarefa 01</label>
                     <button id="botaoApagarLista">X</button>
                 </li>
                 <li>
-                    <div></div>
+                    <div id="botaoConcluido"></div>
                     <label>Tarefa 01</label>
                     <button id="botaoApagarLista">X</button>
                 </li>
                 <li>
-                    <div></div>
+                    <div id="botaoConcluido"></div>
                     <label>Tarefa 01</label>
                     <button id="botaoApagarLista">X</button>
                 </li>
@@ -109,7 +114,7 @@ const Main = {
             
             li.innerHTML += `
             <li>
-                <div></div>
+                <div id="botaoConcluido"></div>
                 <label>${Input}</label>
                 <button id="botaoApagarLista">X</button>
             </li>`
@@ -146,6 +151,17 @@ const Main = {
             li.classList.add('sumir')
 
         Main.init()
+        },
+        concluirTarefa: function(e) {
+            li = e.target.parentElement
+            let condicao = li.classList.contains('done')
+
+            if (condicao) {
+                li.classList.remove('done')
+                return
+            }
+            li.classList.add('done')
+
         }
     }
 }

@@ -54,12 +54,16 @@ section.listas {
     cursor: pointer;
 }
 
-.listas ul li div:active {
+.listas ul li.done div {
     background-color: green;
 }
 
 .listas ul li label {
     margin-left: 8px;
+}
+
+.listas ul li.done label {
+    text-decoration: line-through;
 }
 
 .listas ul li button {
