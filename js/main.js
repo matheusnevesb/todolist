@@ -138,6 +138,10 @@ const Main = {
             input = e.target.parentElement.children[1]
             texto = input.value
 
+            if (texto == ''){
+                return
+            }
+
             titulo = e.target.parentElement.children[0]
             titulo.innerHTML = texto
 
