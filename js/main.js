@@ -17,6 +17,8 @@ const Main = {
         this.$botaoSalvarCabecalho = document.querySelectorAll('#botaoSalvarCabecalho')
         this.$botaoApagarLista = document.querySelectorAll('#botaoApagarLista')
         this.$botaoConcluido = document.querySelectorAll('#botaoConcluido')
+        this.$tarefa = document.querySelectorAll('#tarefa')
+        this.$botaoSalvarLista = document.querySelectorAll('#botaoSalvarLista')
     },
     bindEvents: function() {
         const self = this
@@ -46,6 +48,14 @@ const Main = {
         this.$botaoConcluido.forEach(function(botao) {
             botao.onclick = self.Events.concluirTarefa.bind(this)
         })
+
+        this.$tarefa.forEach(function(botaoTarefa) {
+            botaoTarefa.onclick = self.Events.alterarNomeTarefa.bind(this)
+        })
+
+        this.$botaoSalvarLista.forEach(function(botao) {
+            botao.onclick = self.Events.salvarNovoNomeTarefa.bind(this)
+        })
     },
     Events: {
         adicionarLista: function() {
@@ -54,7 +64,7 @@ const Main = {
             this.listas.innerHTML += `
         <section class="listas">
             <div class="listaCabecalho">
-                <h1 class="listaTitulo" id="listaTitulo">Lista 01</h1>
+                <h1 class="listaTitulo" id="listaTitulo">Nova Lista</h1>
                 <input type="text" id="inputListaTitulo" class="sumir" placeholder="Digite nome da lista">
                 <button class="botaoSalvarCabecalho sumir" id="botaoSalvarCabecalho">salvar</button>
                 <button id="minimizar">V</button>
@@ -62,19 +72,26 @@ const Main = {
             <ul id="tarefas">
                 <li>
                     <div id="botaoConcluido"></div>
-                    <label>Tarefa 01</label>
+                    <label id="tarefa">Tarefa 01</label>
+                    <input type="text" id="inputLista" class="inputLista sumir" placeholder="Digite nome da lista">
+                    <button class="botaoSalvarLista sumir" id="botaoSalvarLista">salvar</button>
                     <button id="botaoApagarLista">X</button>
                 </li>
                 <li>
                     <div id="botaoConcluido"></div>
-                    <label>Tarefa 01</label>
+                    <label id="tarefa">Tarefa 01</label>
+                    <input type="text" id="inputLista" class="inputLista sumir" placeholder="Digite nome da lista">
+                    <button class="botaoSalvarLista sumir" id="botaoSalvarLista">salvar</button>
                     <button id="botaoApagarLista">X</button>
                 </li>
                 <li>
                     <div id="botaoConcluido"></div>
-                    <label>Tarefa 01</label>
+                    <label id="tarefa">Tarefa 01</label>
+                    <input type="text" id="inputLista" class="inputLista sumir" placeholder="Digite nome da lista">
+                    <button class="botaoSalvarLista sumir" id="botaoSalvarLista">salvar</button>
                     <button id="botaoApagarLista">X</button>
                 </li>
+                
             </ul>
             <div class="containerInput" id="containerInput">
                 <input type="text" placeholder="Digite sua tarefa aqui...">
@@ -133,6 +150,8 @@ const Main = {
             texto = titulo.innerHTML
             input.value = texto
             botaoSalvar.classList.remove('sumir')
+
+        Main.init()
         },
         salvarInputLista: function(e) {
             input = e.target.parentElement.children[1]
@@ -148,6 +167,7 @@ const Main = {
             input.classList.add('sumir')
             titulo.classList.remove('sumir')
             botaoSalvar.classList.add('sumir')
+        Main.init()
         },
         apagarLista: function(e) {
             console.log(e)
@@ -166,6 +186,31 @@ const Main = {
             }
             li.classList.add('done')
 
+        },
+        alterarNomeTarefa: function(e) {
+            input = e.target.nextElementSibling
+            botao = e.target.parentElement.children[3]
+            label = e.target
+            label.classList.add('sumir')
+            input.classList.remove('sumir')
+            botao.classList.remove('sumir')
+            input.value = label.innerHTML
+            
+        },
+        salvarNovoNomeTarefa: function(e) {
+            botaoSalvar = e.target
+            input = e.target.parentElement.children[2]
+            label = e.target.parentElement.children[1]
+
+            if (input.value == '') {
+                return
+            }
+
+            label.innerHTML = input.value
+            label.classList.remove('sumir')
+            input.classList.add('sumir')
+            botaoSalvar.classList.add('sumir')
+            console.log(e)
         }
     }
 }
