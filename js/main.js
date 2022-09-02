@@ -128,6 +128,10 @@ const Main = {
             let Input = e.target.parentElement.children[0].value
 
             let li = e.target.parentElement.offsetParent.children.tarefas
+
+            if (Input == '') {
+                return
+            }
             
             li.innerHTML += `
             <li>
@@ -210,7 +214,6 @@ const Main = {
             label.classList.remove('sumir')
             input.classList.add('sumir')
             botaoSalvar.classList.add('sumir')
-            console.log(e)
         }
     }
 }

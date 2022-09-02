@@ -9,53 +9,61 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <div id="listas">
-        <section class="listas">
-            <div class="listaCabecalho">
-                <h1 class="listaTitulo" id="listaTitulo">Lista de tarefas</h1>
-                <input type="text" id="inputListaTitulo" class="sumir" placeholder="Digite nome da lista">
-                <button class="botaoSalvarCabecalho sumir" id="botaoSalvarCabecalho">salvar</button>
-                <button id="minimizar">V</button>
-            </div>
-            <ul id="tarefas">
-                <li>
-                    <div id="botaoConcluido"></div>
-                    <label id="tarefa">Tarefa 01</label>
-                    <input type="text" id="inputLista" class="inputLista sumir" placeholder="Digite nome da lista">
-                    <button class="botaoSalvarLista sumir" id="botaoSalvarLista">salvar</button>
-                    <button id="botaoApagarLista">X</button>
-                </li>
-                <li>
-                    <div id="botaoConcluido"></div>
-                    <label id="tarefa">Tarefa 01</label>
-                    <input type="text" id="inputLista" class="inputLista sumir" placeholder="Digite nome da lista">
-                    <button class="botaoSalvarLista sumir" id="botaoSalvarLista">salvar</button>
-                    <button id="botaoApagarLista">X</button>
-                </li>
-                <li>
-                    <div id="botaoConcluido"></div>
-                    <label id="tarefa">Tarefa 01</label>
-                    <input type="text" id="inputLista" class="inputLista sumir" placeholder="Digite nome da lista">
-                    <button class="botaoSalvarLista sumir" id="botaoSalvarLista">salvar</button>
-                    <button id="botaoApagarLista">X</button>
-                </li>
-                
-                
-            </ul>
-            <div class="containerInput" id="containerInput">
-                <input type="text" placeholder="Digite sua tarefa aqui...">
-                <button id="botaoSalvar">Salvar</button>
-            </div>
+    <div class="container">
+        <div id="listas">
+            <section class="listas">
+                <div class="listaCabecalho">
+                    <h1 class="listaTitulo" id="listaTitulo">Lista de tarefas</h1>
+                    <input type="text" id="inputListaTitulo" class="sumir" placeholder="Digite nome da lista">
+                    <button class="botaoSalvarCabecalho sumir" id="botaoSalvarCabecalho">salvar</button>
+                    <button id="minimizar">V</button>
+                </div>
+                <ul id="tarefas">
+                    <li>
+                        <div id="botaoConcluido"></div>
+                        <label id="tarefa">Tarefa 01</label>
+                        <input type="text" id="inputLista" class="inputLista sumir" placeholder="Digite nome da lista">
+                        <button class="botaoSalvarLista sumir" id="botaoSalvarLista">salvar</button>
+                        <button id="botaoApagarLista">X</button>
+                    </li>
+                    <li>
+                        <div id="botaoConcluido"></div>
+                        <label id="tarefa">Tarefa 01</label>
+                        <input type="text" id="inputLista" class="inputLista sumir" placeholder="Digite nome da lista">
+                        <button class="botaoSalvarLista sumir" id="botaoSalvarLista">salvar</button>
+                        <button id="botaoApagarLista">X</button>
+                    </li>
+                    <li>
+                        <div id="botaoConcluido"></div>
+                        <label id="tarefa">Tarefa 01</label>
+                        <input type="text" id="inputLista" class="inputLista sumir" placeholder="Digite nome da lista">
+                        <button class="botaoSalvarLista sumir" id="botaoSalvarLista">salvar</button>
+                        <button id="botaoApagarLista">X</button>
+                    </li>
+                    
+                    
+                </ul>
+                <div class="containerInput" id="containerInput">
+                    <input type="text" placeholder="Digite sua tarefa aqui...">
+                    <button id="botaoSalvar">Salvar</button>
+                </div>
+        
+            </section>
+        </div>
+        
     
+        <section>
+            <div class="mais" id="mais">
+                <p>+</p>
+            </div>
         </section>
     </div>
-    
 
-    <section>
-        <div class="mais" id="mais">
-            <p>+</p>
-        </div>
-    </section>
+    <footer>
+        <h3>
+            Desenvolvido por: <a href="https://github.com/matheusnevesb">Matheus Neves</a>
+        </h3>
+    </footer>
 
 
     <script src="./js/main.js"></script>
